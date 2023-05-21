@@ -101,7 +101,7 @@ local random_color = {
 local mycolor = random_color[math.random(10)]
 --local mycolor = "everblush"
 
-vim.cmd("set background=light")
+-- vim.cmd("set background=light")
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. mycolor)
 if not status_ok then
 	return
