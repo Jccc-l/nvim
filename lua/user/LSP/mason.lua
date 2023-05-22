@@ -116,5 +116,8 @@ mason.setup({
 			package_pending = "➜",
 			package_uninstalled = "✗"
 		}
+	},
+	pip = {
+		"--proxy=127.0.0.1:7890",
 	}
 })
