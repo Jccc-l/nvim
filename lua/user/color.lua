@@ -57,7 +57,7 @@ local random_color = {
 	"molokai",
 	"tokyonight",
 	"tokyonight-moon",
-	"tokyonight-day",
+	-- "tokyonight-day",
 	"tokyonight-night",
 	"tokyonight-storm",
 	"dracula",
