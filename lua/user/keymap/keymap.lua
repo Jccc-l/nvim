@@ -53,3 +53,5 @@ keymap("n", "ss", "<cmd>w<CR><cmd>source<CR>", opt)
 keymap("n", "Q", "<cmd>wqa<CR>", opt)
 -- keymap("n", "<C-c>", "<cmd>wqa<CR>", opt)
 
+--以最高权限保存文件
+keymap("n", "sw", "<cmd>SudaWrite<CR>", opt)
