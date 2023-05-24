@@ -16,7 +16,7 @@ M.load_default_options = function()
 		cmdheight = 1,       -- more space in the neovim command line for displaying messages
 		completeopt = { "menuone", "noselect" },
 		conceallevel = 1,    -- so that `` is visible in markdown files
-		fileencoding = "utf-8", -- the encoding written to a file
+		-- fileencoding = "utf-8", -- the encoding written to a file
 		fileencodings = "ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1",
 		foldmethod = "manual", -- folding, set to "expr" for treesitter based folding
 		foldexpr = "",       -- set to "nvim_treesitter#foldexpr()" for treesitter based folding
@@ -34,7 +34,7 @@ M.load_default_options = function()
 		termguicolors = true, -- set term gui colors (most terminals support this)
 		timeoutlen = 1000,   -- time to wait for a mapped sequence to complete (in milliseconds)
 		title = true,        -- set the title of window to the value of the titlestring
-		-- opt.titlestring = "%<%F%=%l/%L - nvim" -- what the title of the window will be set to
+		titlestring = "%<%F%=%l/%L - nvim", -- what the title of the window will be set to
 		--undodir = undodir, -- set an undo directory
 		undofile = true, -- enable persistent undo
 		updatetime = 100, -- faster completion
