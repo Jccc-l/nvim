@@ -140,7 +140,9 @@ require("lazy").setup({
 		end,
 	},
 	"lervag/vimtex",
+	-- Quick select
 	"vim-scripts/wildfire.vim",
+	"dhruvasagar/vim-table-mode",
 
 
 	-------
