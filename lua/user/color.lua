@@ -98,7 +98,7 @@ local random_color = {
 }
 
 --math.randomseed(os.time())
-local mycolor = random_color[math.random(44)]
+local mycolor = random_color[math.random(42)]
 --local mycolor = "everblush"
 
 -- vim.cmd("set background=light")
