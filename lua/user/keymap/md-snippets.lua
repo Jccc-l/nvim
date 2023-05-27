@@ -9,7 +9,7 @@ vim.api.nvim_create_autocmd("FileType", {
 		-- Mission
 		keymap("i", ",m", "- [ ] ", opts)
 		-- Picture
-		keymap("i", ",p", "<img src=\"\" width=<++>><ESC>F\"i", opts)
+		keymap("i", ",p", "<img src=\"\" style=\"max-width=100%\"><ESC>3F\"i", opts)
 		-- Find next<++>
 		keymap("i", ",f", "<ESC>/<++><CR>cf>", opts)
 		-- Line
