@@ -21,42 +21,136 @@ require("lazy").setup({
 	-------------
 	-------------
 	--icon
-	"nvim-tree/nvim-web-devicons",
+	{
+		"nvim-tree/nvim-web-devicons",
+		lazy = false,
+	},
 	-- ColorScheme
-	"lukas-reineke/indent-blankline.nvim",
-	"akinsho/bufferline.nvim",
-	"tjdevries/colorbuddy.nvim",
-	"nvim-lualine/lualine.nvim",
-
-	--	-- colorscheme
-	"sainnhe/everforest",
-	"ajmwagar/vim-deus",
-	"connorholyday/vim-snazzy",
-	"tomasr/molokai",
-	"folke/tokyonight.nvim",
-	"ghifarit53/tokyonight-vim",
-	"Mofiqul/dracula.nvim",
-	"altercation/vim-colors-solarized",
-	"KeitaNakamura/neodark.vim",
-	"morhetz/gruvbox",
-	"ellisonleao/gruvbox.nvim",
-	"sainnhe/sonokai",
-	"ray-x/aurora",
-	"joshdick/onedark.vim",
-	"Everblush/everblush.vim",
-	"rebelot/kanagawa.nvim",
-	"titanzero/zephyrium",
-	"daschw/leaf.nvim",
-	"Mofiqul/adwaita.nvim",
-	"glepnir/zephyr-nvim",
-	"shaunsingh/nord.nvim",
-	"savq/melange",
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		lazy = false,
+	},
+	{
+		"akinsho/bufferline.nvim",
+		lazy = false,
+	},
+	{
+		"tjdevries/colorbuddy.nvim",
+		lazy = false,
+	},
+	{
+		"nvim-lualine/lualine.nvim",
+		lazy = false,
+	},
+	{
+		"sainnhe/everforest",
+		lazy = false,
+	},
+	{
+		"ajmwagar/vim-deus",
+		lazy = false,
+	},
+	{
+		"connorholyday/vim-snazzy",
+		lazy = false,
+	},
+	{
+		"tomasr/molokai",
+		lazy = false,
+	},
+	{
+		"folke/tokyonight.nvim",
+		lazy = false,
+	},
+	{
+		"ghifarit53/tokyonight-vim",
+		lazy = false,
+	},
+	{
+		"Mofiqul/dracula.nvim",
+		lazy = false,
+	},
+	{
+		"altercation/vim-colors-solarized",
+		lazy = false,
+	},
+	{
+		"KeitaNakamura/neodark.vim",
+		lazy = false,
+	},
+	{
+		"morhetz/gruvbox",
+		lazy = false,
+	},
+	{
+		"ellisonleao/gruvbox.nvim",
+		lazy = false,
+	},
+	{
+		"sainnhe/sonokai",
+		lazy = false,
+	},
+	{
+		"ray-x/aurora",
+		lazy = false,
+	},
+	{
+		"joshdick/onedark.vim",
+		lazy = false,
+	},
+	{
+		"Everblush/everblush.vim",
+		lazy = false,
+	},
+	{
+		"rebelot/kanagawa.nvim",
+		lazy = false,
+	},
+	{
+		"titanzero/zephyrium",
+		lazy = false,
+	},
+	{
+		"daschw/leaf.nvim",
+		lazy = false,
+	},
+	{
+		"Mofiqul/adwaita.nvim",
+		lazy = false,
+	},
+	{
+		"glepnir/zephyr-nvim",
+		lazy = false,
+	},
+	{
+		"shaunsingh/nord.nvim",
+		lazy = false,
+	},
+	{
+		"savq/melange",
+		lazy = false,
+	},
 	--  "shaunsingh/solarized.nvim",
-	"kvrohit/substrata.nvim",
-	"rafamadriz/neon",
-	"Mofiqul/vscode.nvim",
-	"tanvirtin/monokai.nvim",
-	"owickstrom/vim-colors-paramount",
+	{
+		"kvrohit/substrata.nvim",
+		lazy = false,
+	},
+	{
+		"rafamadriz/neon",
+		lazy = false,
+	},
+	{
+		"Mofiqul/vscode.nvim",
+		lazy = false,
+	},
+	{
+		"tanvirtin/monokai.nvim",
+		lazy = false,
+	},
+	{
+		"owickstrom/vim-colors-paramount",
+		lazy = false,
+	},
 	{
 		"projekt0n/github-nvim-theme",
 		tag = "v0.0.7",
@@ -68,7 +162,10 @@ require("lazy").setup({
 		end,
 	},
 	-- use({ "folke/tokyonight.nvim", commit = "66bfc2e8f754869c7b651f3f47a2ee56ae557764" })
-	"lunarvim/darkplus.nvim", --, commit = "13ef9daad28d3cf6c5e793acfc16ddbf456e1c83" })
+	{
+		"lunarvim/darkplus.nvim", --, commit = "13ef9daad28d3cf6c5e793acfc16ddbf456e1c83" })
+		lazy = false,
+	},
 
 	------------------------
 	------------------------
@@ -143,8 +240,28 @@ require("lazy").setup({
 	-- Quick select
 	"vim-scripts/wildfire.vim",
 	"dhruvasagar/vim-table-mode",
-	"vimwiki/vimwiki",
-
+	{
+		"vimwiki/vimwiki",
+		priority = 1000,
+		branch = "dev",
+		lazy = false,
+		-- dependencies = {'michal-h21/vim-zettel'},
+		init = function()
+			vim.g.vimwiki_global_ext = 0
+			vim.g.vimwiki_list = {
+				{
+					path = "~/vimwiki/",
+					syntax = "markdown",
+					ext = ".md",
+				},
+				{
+					path = "~/Documents/Note/",
+					syntax = "markdown",
+					ext = ".md",
+				},
+			}
+		end
+	},
 
 	-------
 	-------
