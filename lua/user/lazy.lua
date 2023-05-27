@@ -143,6 +143,7 @@ require("lazy").setup({
 	-- Quick select
 	"vim-scripts/wildfire.vim",
 	"dhruvasagar/vim-table-mode",
+	"vimwiki/vimwiki",
 
 
 	-------
