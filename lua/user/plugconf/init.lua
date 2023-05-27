@@ -1,5 +1,6 @@
 require("user.plugconf.telescope")
 require("user.plugconf.bufferline")
+require("user.plugconf.blankline")
 require("user.plugconf.lualine")
 require("user.plugconf.vimtex")
 require("user.plugconf.comment")
