@@ -1,5 +1,5 @@
 require("user.lazy")
-require("user.options").load_default_options()
+require("user.options").load_defaults()
 require("user.LSP")
 require("user.DAP")
 require("user.plugconf")
