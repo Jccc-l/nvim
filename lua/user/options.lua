@@ -95,7 +95,9 @@ M.load_defaults = function()
 end
 
 vim.cmd [[ 	
+			set nocompatible
 			filetype plugin indent on
+			filetype plugin on
 			syntax on
 ]]
 
