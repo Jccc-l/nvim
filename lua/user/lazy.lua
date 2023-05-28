@@ -183,7 +183,12 @@ require("lazy").setup({
 
 
 
-	"folke/which-key.nvim",
+	{
+		"folke/which-key.nvim",
+		config = function()
+			require("which-key").setup()
+		end
+	},
 	"junegunn/vim-easy-align", -- easy align
 	"ethanholz/nvim-lastplace", -- Go back to the position changed last time
 	"tpope/vim-surround",
@@ -193,6 +198,13 @@ require("lazy").setup({
 
 	"numToStr/Comment.nvim", -- Comment
 	"rcarriga/nvim-notify",
+	{
+		"norcalli/nvim-colorizer.lua",
+		lazy=false,
+		config=function ()
+			require'colorizer'.setup()
+		end
+	},
 
 	--------------
 	--------------
@@ -243,9 +255,29 @@ require("lazy").setup({
 	{
 		"vimwiki/vimwiki",
 		priority = 1000,
-		branch = "dev",
+		branch = "master",
 		lazy = false,
 		-- dependencies = {'michal-h21/vim-zettel'},
+		init = function()
+			vim.g.vimwiki_global_ext = 0
+			vim.g.vimwiki_list = {
+				{
+					path = "~/vimwiki/",
+					syntax = "markdown",
+					ext = ".md",
+				},
+				{
+					path = "~/Documents/Note/",
+					syntax = "markdown",
+					ext = ".md",
+				},
+				{
+					path = "~/Documents/Note/English/",
+					syntax = "markdown",
+					ext = ".md",
+				},
+			}
+		end
 	},
 
 	-------
