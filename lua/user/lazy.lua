@@ -200,9 +200,9 @@ require("lazy").setup({
 	"rcarriga/nvim-notify",
 	{
 		"norcalli/nvim-colorizer.lua",
-		lazy=false,
-		config=function ()
-			require'colorizer'.setup()
+		lazy = false,
+		config = function()
+			require 'colorizer'.setup()
 		end
 	},
 
@@ -275,6 +275,11 @@ require("lazy").setup({
 					path = "~/Documents/Note/English/",
 					syntax = "markdown",
 					ext = ".md",
+				},
+				{
+					path = "~/Documents/Note/Data_Base/",
+					syntax = "markdown",
+					ext = ".md"
 				},
 			}
 		end
