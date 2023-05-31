@@ -286,6 +286,11 @@ require("lazy").setup({
 					syntax = "markdown",
 					ext = ".md"
 				},
+				{
+					path = "~/Documents/Note/Mathematics_Modeling/",
+					syntax = "markdown",
+					ext = ".md"
+				},
 			}
 		end
 	},
