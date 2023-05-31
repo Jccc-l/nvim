@@ -281,6 +281,11 @@ require("lazy").setup({
 					syntax = "markdown",
 					ext = ".md"
 				},
+				{
+					path = "~/Documents/Note/Computer_Interwork/",
+					syntax = "markdown",
+					ext = ".md"
+				},
 			}
 		end
 	},
