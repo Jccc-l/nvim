@@ -1,7 +1,6 @@
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = { "markdown" },
 	callback = function()
-		vim.notify("This is a markdown file")
 		-- Bold
 		keymap("i", ",b", "****<++><ESC>F*hi", opts)
 		-- Italy
