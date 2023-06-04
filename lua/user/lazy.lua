@@ -216,6 +216,7 @@ require("lazy").setup({
 
 	"lambdalisue/suda.vim", -- read or write files with sudo command
 	{
+		lazy = false,
 		'Saverio976/music.nvim',
 		cmd          = 'MusicInstall',
 		dependencies = { 'voldikss/vim-floaterm' }
