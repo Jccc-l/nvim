@@ -333,6 +333,7 @@ require("lazy").setup({
 	"hrsh7th/cmp-path",
 	"L3MON4D3/LuaSnip",
 	"saadparwaiz1/cmp_luasnip",
+	"rafamadriz/friendly-snippets",
 	"tamago324/cmp-zsh",
 	"Shougo/deol.nvim", --zsh搭配使用
 	"kdheepak/cmp-latex-symbols",
