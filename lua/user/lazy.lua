@@ -259,41 +259,6 @@ require("lazy").setup({
 		branch = "master",
 		lazy = false,
 		-- dependencies = {'michal-h21/vim-zettel'},
-		init = function()
-			vim.g.vimwiki_global_ext = 0
-			vim.g.vimwiki_list = {
-				{
-					path = "~/vimwiki/",
-					syntax = "markdown",
-					ext = ".md",
-				},
-				{
-					path = "~/Documents/Note/",
-					syntax = "markdown",
-					ext = ".md",
-				},
-				{
-					path = "~/Documents/Note/English/",
-					syntax = "markdown",
-					ext = ".md",
-				},
-				{
-					path = "~/Documents/Note/Data_Base/",
-					syntax = "markdown",
-					ext = ".md"
-				},
-				{
-					path = "~/Documents/Note/Computer_Interwork/",
-					syntax = "markdown",
-					ext = ".md"
-				},
-				{
-					path = "~/Documents/Note/Mathematics_Modeling/",
-					syntax = "markdown",
-					ext = ".md"
-				},
-			}
-		end
 	},
 
 	-------
