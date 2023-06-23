@@ -1,5 +1,11 @@
 -- Call the setup function to change the default behavior
-require("aerial").setup({
+local status_ok, aerial = pcall(require, "aerial")
+
+if not status_ok then
+	vim.notify("Aerial not found!")
+	return
+end
+aerial.setup({
 	-- Priority list of preferred backends for aerial.
 	-- This can be a filetype map (see :help aerial-filetype-map)
 	backends = { "treesitter", "lsp", "markdown", "man" },

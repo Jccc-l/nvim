@@ -30,17 +30,17 @@ telescope.setup {
 		-- extension_name = {
 		-- 	--   extension_config_key = value,
 		-- }
-		aerial = {
-			-- Display symbols as <root>.<parent>.<symbol>
-			show_nesting = {
-				['_'] = false, -- This key will be the default
-				json = true, -- You can set the option for specific filetypes
-				yaml = true,
-			}
-		},
+		--aerial = {
+		--	-- Display symbols as <root>.<parent>.<symbol>
+		--	show_nesting = {
+		--		['_'] = false, -- This key will be the default
+		--		json = true, -- You can set the option for specific filetypes
+		--		yaml = true,
+		--	}
+		--},
 		notify = {}
 		-- please take a look at the readme of the extension you want to configure
 	}
 }
-require('telescope').load_extension('aerial')
+--require('telescope').load_extension('aerial')
 require('telescope').load_extension('notify')
