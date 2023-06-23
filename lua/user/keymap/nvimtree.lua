@@ -1,1 +1,1 @@
-keymap("n","<leader>e","<cmd>NvimTreeToggle<cr>",opt)
+keymap("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", opt)

@@ -16,8 +16,8 @@ keymap("n", "<C-k>", "<C-w>k", opt)
 keymap("n", "<C-l>", "<C-w>l", opt)
 
 -- Exit insert mode
-keymap("i", "jk", "<ESC>", opt)
-keymap("i", "kj", "<ESC>", opt)
+-- keymap("i", "jk", "<ESC>", opt)
+-- keymap("i", "kj", "<ESC>", opt)
 
 -- Left and right proportional control(控制左右分屏大小)
 keymap("n", "<C-Left>", "<cmd>vertical resize -2<CR>", opt)

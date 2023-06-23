@@ -14,11 +14,11 @@ vim.api.nvim_create_autocmd("FileType", {
 		-- Line
 		keymap("i", ",l", "---<CR>", opts)
 		-- Link
-		keymap("i",",a","[](<++>)<++><ESC>F]i",opts)
+		keymap("i", ",a", "[](<++>)<++><ESC>F]i", opts)
 		-- Strikethrough
 		keymap("i", ",s", "~~~~ <++><Esc>F~hi", opts)
 		-- Code block
-		keymap("i", ",c", "```<CR><++><CR>```<ESC>2kA",opts)
+		keymap("i", ",c", "```<CR><++><CR>```<ESC>2kA", opts)
 		-- Title
 		keymap("i", ",1", "# <CR><++><ESC>kA", opts)
 		keymap("i", ",2", "## <CR><++><ESC>kA", opts)

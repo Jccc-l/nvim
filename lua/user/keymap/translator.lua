@@ -1,1 +1,1 @@
-keymap("n", "tl","<cmd>TranslateW<CR>",opt)
+keymap("n", "tl", "<cmd>TranslateW<CR>", opt)

@@ -1,1 +1,1 @@
-keymap('n', '<leader>a', '<cmd>AerialToggle!<CR>',opts)
+keymap('n', '<leader>a', '<cmd>AerialToggle!<CR>', opts)
