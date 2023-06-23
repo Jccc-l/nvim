@@ -135,16 +135,16 @@ end
 
 local config = {
 	-- disable virtual text
-	virtual_text = true,
+	virtual_text = false,
 	-- show signs
 	signs = {
 		active = signs,
 	},
-	update_in_insert = true,
+	update_in_insert = false,
 	underline = true,
 	severity_sort = true,
 	float = {
-		focusable = true,
+		focusable = false,
 		style = "minimal",
 		border = "rounded",
 		source = "always",
