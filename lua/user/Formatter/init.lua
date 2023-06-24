@@ -1,8 +1,14 @@
 -- Utilities for creating configurations
+local status_ok, formatter = pcall(require, "formatter")
+
+if not status_ok then
+	vim.notify("formatter not found!")
+	return
+end
 local util = require("formatter.util")
 
 -- Provides the Format, FormatWrite, FormatLock, and FormatWriteLock commands
-require("formatter").setup({
+formatter.setup({
 	-- Enable or disable logging
 	logging = true,
 	-- Set the log level
@@ -39,7 +45,7 @@ require("formatter").setup({
 			end,
 		},
 		cpp = require("user.Formatter.clangformat"),
-		sh = {require("user.Formatter.sh").shfmt()},
+		sh = { require("user.Formatter.sh").shfmt() },
 		-- Use the special "*" filetype for defining formatter configurations on
 		-- any filetype
 		--		["*"] = {
