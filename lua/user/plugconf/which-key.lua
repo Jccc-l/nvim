@@ -20,8 +20,8 @@ local setup = {
 			text_objects = true, -- help for text objects triggered after entering an operator
 			windows = true, -- default bindings on <c-w>
 			nav = true, -- misc bindings to work with windows
-			z = true,   -- bindings for folds, spelling and others prefixed with z
-			g = true,   -- bindings for prefixed with g
+			z = true, -- bindings for folds, spelling and others prefixed with z
+			g = true, -- bindings for prefixed with g
 		},
 	},
 	-- add operators that will trigger motion and text object completion
@@ -51,15 +51,15 @@ local setup = {
 		winblend = 0,
 	},
 	layout = {
-		height = { min = 4, max = 25 },                                        -- min and max height of the columns
-		width = { min = 20, max = 50 },                                        -- min and max width of the columns
-		spacing = 3,                                                           -- spacing between columns
-		align = "left",                                                        -- align columns left, center or right
+		height = { min = 4, max = 25 }, -- min and max height of the columns
+		width = { min = 20, max = 50 }, -- min and max width of the columns
+		spacing = 3, -- spacing between columns
+		align = "left", -- align columns left, center or right
 	},
-	ignore_missing = true,                                                     -- enable this to hide mappings for which you didn't specify a label
+	ignore_missing = true, -- enable this to hide mappings for which you didn't specify a label
 	hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
-	show_help = true,                                                          -- show help message on the command line when the popup is visible
-	triggers = "auto",                                                         -- automatically setup triggers
+	show_help = true, -- show help message on the command line when the popup is visible
+	triggers = "auto", -- automatically setup triggers
 	-- triggers = {"<leader>"} -- or specify a list manually
 	triggers_blacklist = {
 		-- list of mode / prefixes that should never be hooked by WhichKey
@@ -71,7 +71,7 @@ local setup = {
 }
 
 local opts = {
-	mode = "n",  -- NORMAL mode
+	mode = "n", -- NORMAL mode
 	prefix = "<leader>",
 	buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
 	silent = true, -- use `silent` when creating keymaps
@@ -80,49 +80,55 @@ local opts = {
 }
 
 local mappings = {
-	["a"] = { "<cmd>Alpha<cr>", "Alpha" },
-	["b"] = {
-		"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-		"Buffers",
-	},
+	["a"] = { "<cmd>AerialToggle<cr>", "Vista" },
 	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-	["w"] = { "<cmd>w!<CR>", "Save" },
+	-- ["w"] = { "<cmd>w<CR>", "Save" },
 	["q"] = { "<cmd>q!<CR>", "Quit" },
-	["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
+	["c"] = { "<cmd>bdelete!<CR>", "Close Buffer" },
 	["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
-	["f"] = {
-		"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-		"Find files",
-	},
-	["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
-	["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
+	["L"] = { "<cmd>Lazy<CR>", "Lazy" },
+	["T"] = { "<cmd>TroubleToggle<CR>", "Trouble" },
+	["j"] = { "<cmd>bnext<CR>", "Next Buffer"},
+	["k"] = { "<cmd>bprevious<CR>", "Previous Buffer"},
 
-	p = {
-		name = "Packer",
-		c = { "<cmd>PackerCompile<cr>", "Compile" },
-		i = { "<cmd>PackerInstall<cr>", "Install" },
-		s = { "<cmd>PackerSync<cr>", "Sync" },
-		S = { "<cmd>PackerStatus<cr>", "Status" },
-		u = { "<cmd>PackerUpdate<cr>", "Update" },
+	f = {
+		name = "Find",
+		b = {
+			"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+			"Buffers",
+		},
+		p = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
+		f = {
+			"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+			"Files",
+		},
 	},
+	-- p = {
+	-- 	name = "Packer",
+	-- 	c = { "<cmd>PackerCompile<cr>", "Compile" },
+	-- 	i = { "<cmd>PackerInstall<cr>", "Install" },
+	-- 	s = { "<cmd>PackerSync<cr>", "Sync" },
+	-- 	S = { "<cmd>PackerStatus<cr>", "Status" },
+	-- 	u = { "<cmd>PackerUpdate<cr>", "Update" },
+	-- },
 
 	g = {
 		name = "Git",
 		g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
-		j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
-		k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
-		l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
-		p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
-		r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
-		R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
-		s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
+		j = { "<cmd>lua require('gitsigns').next_hunk()<cr>", "Next Hunk" },
+		k = { "<cmd>lua require('gitsigns').prev_hunk()<cr>", "Prev Hunk" },
+		l = { "<cmd>lua require('gitsigns').blame_line()<cr>", "Blame" },
+		p = { "<cmd>lua require('gitsigns').preview_hunk()<cr>", "Preview Hunk" },
+		r = { "<cmd>lua require('gitsigns').reset_hunk()<cr>", "Reset Hunk" },
+		R = { "<cmd>lua require('gitsigns').reset_buffer()<cr>", "Reset Buffer" },
+		s = { "<cmd>lua require('gitsigns').stage_hunk()<cr>", "Stage Hunk" },
 		u = {
 			"<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>",
 			"Undo Stage Hunk",
 		},
-		o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
-		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-		c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
+		o = { "<cmd>lua require('telescope.builtin').git_status()<cr>", "Open changed file" },
+		b = { "<cmd>lua require('telescope.builtin').git_branches()<cr>", "Checkout branch" },
+		c = { "<cmd>lua require('telescope.builtin').git_commits()<cr>", "Checkout commit" },
 		d = {
 			"<cmd>Gitsigns diffthis HEAD<cr>",
 			"Diff",
@@ -133,14 +139,14 @@ local mappings = {
 		name = "LSP",
 		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
 		d = {
-			"<cmd>Telescope diagnostics bufnr=0<cr>",
+			"<cmd>lua require('telescope.builtin').diagnostics({bufnr=0}) <cr>",
 			"Document Diagnostics",
 		},
 		w = {
-			"<cmd>Telescope diagnostics<cr>",
+			"<cmd>lua require('telescope.builtin').diagnostics({bufnr=nil}) <cr>",
 			"Workspace Diagnostics",
 		},
-		f = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Format" },
+		f = { "<cmd>Format<cr>", "Format" },
 		i = { "<cmd>LspInfo<cr>", "Info" },
 		I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
 		j = {
@@ -162,14 +168,16 @@ local mappings = {
 	},
 	s = {
 		name = "Search",
-		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-		c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
-		h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
-		M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
-		r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
-		R = { "<cmd>Telescope registers<cr>", "Registers" },
-		k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
-		C = { "<cmd>Telescope commands<cr>", "Commands" },
+		b = { "<cmd>lua require('telescope.builtin').git_branches()<cr>", "Checkout branch" },
+		c = { "<cmd>lua require('telescope.builtin').colorscheme()<cr>", "Colorscheme" },
+		g = { "<cmd>lua require('telescope.builtin').live_grep(require('telescope.themes').get_ivy({}))<cr>", "Text" },
+		h = { "<cmd>lua require('telescope.builtin').help_tags()<cr>", "Help" },
+		M = { "<cmd>lua require('telescope.builtin').man_pages()<cr>", "Man Pages" },
+		n = { "<cmd>lua require('telescope').extensions.notify.notify()<cr>", "Notify" },
+		r = { "<cmd>lua require('telescope.builtin').oldfiles()<cr>", "Open Recent File" },
+		R = { "<cmd>lua require('telescope.builtin').registers()<cr>", "Registers" },
+		k = { "<cmd>lua require('telescope.builtin').keymaps()<cr>", "Keymaps" },
+		C = { "<cmd>lua require('telescope.builtin').commands()<cr>", "Commands" },
 	},
 
 	t = {
@@ -181,6 +189,12 @@ local mappings = {
 		f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
 		h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
 		v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
+	},
+
+	d = {
+		name = "DAP",
+		b = { "<cmd>lua require('dap').toggle_breakpoint()<cr>", "Breakpoint" },
+		u = {"<cmd>lua require('dapui').toggle()<cr>", "DAP-UI"}
 	},
 }
 

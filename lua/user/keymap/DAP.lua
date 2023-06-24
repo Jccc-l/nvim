@@ -1,11 +1,7 @@
-keymap("n", "<leader>dd", "<cmd>lua require('dapui').toggle()<cr>", opts)
--- keymap
 keymap('n', '<F5>', "<cmd>lua require('dap').continue()<cr>", opts)
 keymap('n', '<F10>', "<cmd>lua require('dap').step_over()<cr>", opts)
 keymap('n', '<F11>', "<cmd>lua require('dap').step_into()<cr>", opts)
 --keymap('n', '<F12>', function() require('dap').step_out() end, opts)
-keymap('n', '<Leader>b', "<cmd>lua require('dap').toggle_breakpoint()<cr>", opts)
-keymap('n', '<Leader>B', "<cmd>lua require('dap').set_breakpoint()<cr>", opts)
 keymap('n', '<Leader>lp',
 	"<cmd>lua require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<cr>", opts)
 keymap('n', '<Leader>dr', "<cmd>lua require('dap').repl.open()<cr>", opts)

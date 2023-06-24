@@ -42,12 +42,6 @@ keymap("v", "K", "<cmd>move '<-2<CR>gv-gv", opt)
 -- keymap("v", "<C-c>", '"+y', opt) -- 复制
 -- keymap("v", "<C-x>", '"+d', opt) -- 剪切
 
---Format(格式化)
-keymap("n", "<M-S-f>", "<cmd>lua vim.lsp.buf.format()<CR>", opt)
-
---切换标签页
-keymap("n", "<M-S-h>", "<cmd>bp<CR>", opt)
-keymap("n", "<M-S-l>", "<cmd>bn<CR>", opt)
 
 keymap("n", "ss", "<cmd>w<CR><cmd>source<CR>", opt)
 keymap("n", "Q", "<cmd>wqa<CR>", opt)
