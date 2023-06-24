@@ -4,7 +4,7 @@ if not status_ok then
 	return
 end
 mason_lspconfig.setup {
-	ensure_installed = { "marksman", "texlab", "lua_ls", "clangd", "pyright", "jdtls" },
+	ensure_installed = { "marksman", "texlab", "lua_ls", "pyright", "jdtls", "clangd" },
 	automatic_installation = true,
 	handlers = nil,
 }
