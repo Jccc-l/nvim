@@ -20,239 +20,161 @@ require("lazy").setup({
 	--Apperance--
 	-------------
 	-------------
-	--icon
+
+	{ "mhinz/vim-startify" }, -- Start Screen
+
+	-- Icon
+	{ "nvim-tree/nvim-web-devicons", lazy = false },
+	-- Indent
+	{ "lukas-reineke/indent-blankline.nvim", lazy = false },
+	-- Buffer
+	{ "akinsho/bufferline.nvim" },
+	-- Bottom Line
+	{ "nvim-lualine/lualine.nvim" },
+	-- Show LSP progress
 	{
-		"nvim-tree/nvim-web-devicons",
-		lazy = false,
-	},
-	-- ColorScheme
-	{
-		"lukas-reineke/indent-blankline.nvim",
-		lazy = false,
-	},
-	{
-		"akinsho/bufferline.nvim",
-		lazy = false,
-	},
-	{
-		"tjdevries/colorbuddy.nvim",
-		lazy = false,
-	},
-	{
-		"nvim-lualine/lualine.nvim",
-		lazy = false,
-	},
-	{
-		"sainnhe/everforest",
-		lazy = false,
-	},
-	{
-		"ajmwagar/vim-deus",
-		lazy = false,
-	},
-	{
-		"connorholyday/vim-snazzy",
-		lazy = false,
-	},
-	{
-		"tomasr/molokai",
-		lazy = false,
-	},
-	{
-		"folke/tokyonight.nvim",
-		lazy = false,
-	},
-	{
-		"ghifarit53/tokyonight-vim",
-		lazy = false,
-	},
-	{
-		"Mofiqul/dracula.nvim",
-		lazy = false,
-	},
-	{
-		"altercation/vim-colors-solarized",
-		lazy = false,
-	},
-	{
-		"KeitaNakamura/neodark.vim",
-		lazy = false,
-	},
-	{
-		"morhetz/gruvbox",
-		lazy = false,
-	},
-	{
-		"ellisonleao/gruvbox.nvim",
-		lazy = false,
-	},
-	{
-		"sainnhe/sonokai",
-		lazy = false,
-	},
-	{
-		"ray-x/aurora",
-		lazy = false,
-	},
-	{
-		"joshdick/onedark.vim",
-		lazy = false,
-	},
-	{
-		"Everblush/everblush.vim",
-		lazy = false,
-	},
-	{
-		"rebelot/kanagawa.nvim",
-		lazy = false,
-	},
-	{
-		"titanzero/zephyrium",
-		lazy = false,
-	},
-	{
-		"daschw/leaf.nvim",
-		lazy = false,
-	},
-	{
-		"Mofiqul/adwaita.nvim",
-		lazy = false,
-	},
-	{
-		"glepnir/zephyr-nvim",
-		lazy = false,
-	},
-	{
-		"shaunsingh/nord.nvim",
-		lazy = false,
-	},
-	{
-		"savq/melange",
-		lazy = false,
-	},
-	--  "shaunsingh/solarized.nvim",
-	{
-		"kvrohit/substrata.nvim",
-		lazy = false,
-	},
-	{
-		"rafamadriz/neon",
-		lazy = false,
-	},
-	{
-		"Mofiqul/vscode.nvim",
-		lazy = false,
-	},
-	{
-		"tanvirtin/monokai.nvim",
-		lazy = false,
-	},
-	{
-		"owickstrom/vim-colors-paramount",
-		lazy = false,
-	},
-	{
-		"projekt0n/github-nvim-theme",
-		tag = "v0.0.7",
-		-- or                            branch = '0.0.x'
+		"linrongbin16/lsp-progress.nvim",
+		event = { "VimEnter" },
+		dependencies = { "nvim-tree/nvim-web-devicons" },
 		config = function()
-			require("github-theme").setup({
-				-- ...
-			})
+			require("lsp-progress").setup()
 		end,
 	},
+
+	-- Theme Maker
+	{ "tjdevries/colorbuddy.nvim" },
+	-- ColorScheme
+	{ "Everblush/everblush.vim" },
+	{ "KeitaNakamura/neodark.vim" },
+	{ "Mofiqul/adwaita.nvim" },
+	{ "Mofiqul/dracula.nvim" },
+	{ "Mofiqul/vscode.nvim" },
+	{ "ajmwagar/vim-deus" },
+	-- { "altercation/vim-colors-solarized" },
+	{ "connorholyday/vim-snazzy" },
+	{ "daschw/leaf.nvim" },
+	{ "ellisonleao/gruvbox.nvim" },
+	{ "folke/tokyonight.nvim" },
+	{ "ghifarit53/tokyonight-vim" },
+	{ "glepnir/zephyr-nvim" },
+	{ "joshdick/onedark.vim" },
+	{ "kvrohit/substrata.nvim" },
+	{ "lunarvim/darkplus.nvim" },
+	{ "morhetz/gruvbox" },
+	{ "owickstrom/vim-colors-paramount" },
+	{ "rafamadriz/neon" },
+	{ "ray-x/aurora" },
+	{ "rebelot/kanagawa.nvim" },
+	{ "sainnhe/everforest" },
+	{ "sainnhe/sonokai" },
+	{ "savq/melange" },
+	{ "shaunsingh/nord.nvim" },
+	{ "tanvirtin/monokai.nvim" },
+	{ "titanzero/zephyrium" },
+	{ "tomasr/molokai" },
+	{ "projekt0n/github-nvim-theme" },
+	{ "shaunsingh/solarized.nvim" },
 	-- use({ "folke/tokyonight.nvim", commit = "66bfc2e8f754869c7b651f3f47a2ee56ae557764" })
-	{
-		"lunarvim/darkplus.nvim", --, commit = "13ef9daad28d3cf6c5e793acfc16ddbf456e1c83" })
-		lazy = false,
-	},
 
 	------------------------
 	------------------------
 	--treesitter highlight--
 	------------------------
 	------------------------
+	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+
+	------------------------
+	------------------------
+	--Function enhancement--
+	------------------------
+	------------------------
+	-- Easy Align
+	{ "junegunn/vim-easy-align" },
+
+	-- Go back to the position changed last time
+	{ "ethanholz/nvim-lastplace" },
+
+	{ "tpope/vim-surround" },
+
+	{ "voldikss/vim-translator" }, -- Translator
+
+	-- Show Trouble
+	{ "folke/trouble.nvim" },
+
+	-- Comment
+	{ "numToStr/Comment.nvim" },
+
+	-- Notify
+	{ "rcarriga/nvim-notify" },
+
+	-- Quick select
+	{ "vim-scripts/wildfire.vim" },
+
+	-- read or write files with sudo command
+	{ "lambdalisue/suda.vim" },
+
 	{
-		"nvim-treesitter/nvim-treesitter",
-		build = ":TSUpdate"
+		"voldikss/vim-floaterm",
+		--		config = function()
+		--			require("pack.floaterm").setup()
+		--		end,
 	},
 
+	--use({ "ashisha/image.vim" })
 
-
-	"mhinz/vim-startify", -- Start Screen
-
-
+	{ "makerj/vim-pdf" }, -- make vim a pdf viewer
 
 	{
 		"folke/which-key.nvim",
 		config = function()
 			require("which-key").setup()
-		end
+		end,
 	},
-	"junegunn/vim-easy-align", -- easy align
-	"ethanholz/nvim-lastplace", -- Go back to the position changed last time
-	"tpope/vim-surround",
-	"voldikss/vim-translator", -- Translator
-	"stevearc/aerial.nvim",  --outline
-	"folke/trouble.nvim",    --show trouble
-
-	"numToStr/Comment.nvim", -- Comment
-	"rcarriga/nvim-notify",
+	-- Color Highlight, such as #FFFFFF
 	{
 		"norcalli/nvim-colorizer.lua",
 		lazy = false,
 		config = function()
-			require 'colorizer'.setup()
-		end
+			require("colorizer").setup()
+		end,
 	},
-
-	--------------
-	--------------
-	--multimedia--
-	--------------
-	--------------
-	--"voldikss/vim-floaterm", -- to run mpv
-	--use({ "ashisha/image.vim" })
-
-	"lambdalisue/suda.vim", -- read or write files with sudo command
-	{
-		lazy = false,
-		'Saverio976/music.nvim',
-		cmd          = 'MusicInstall',
-		dependencies = { 'voldikss/vim-floaterm' }
-	},             -- play music and video in neovim
-
-	"makerj/vim-pdf", -- make vim a pdf viewer
+	{ "Saverio976/music.nvim", lazy = false, cmd = "MusicInstall" }, -- play music and video in neovim
 
 	---------------
 	---------------
 	--File Explore--
 	---------------
 	---------------
-	"nvim-lua/plenary.nvim",
-	"nvim-telescope/telescope.nvim",
+	{ "nvim-lua/plenary.nvim" },
+	{ "nvim-telescope/telescope.nvim" },
+	{
+		"nvim-telescope/telescope-fzf-native.nvim",
+		build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
+	},
 	{
 		"nvim-tree/nvim-tree.lua",
 		config = function()
-			require("nvim-tree").setup {}
-		end
+			require("nvim-tree").setup({})
+		end,
 	},
+	{ "junegunn/fzf" },
+
+	-- Git
+	{ "lewis6991/gitsigns.nvim" },
 
 	----------------
 	----------------
 	--text editing--
 	----------------
 	----------------
+	{ "lervag/vimtex" },
 	{
 		"iamcco/markdown-preview.nvim",
 		build = function()
 			vim.fn["mkdp#util#install"]()
 		end,
 	},
-	"lervag/vimtex",
-	-- Quick select
-	"vim-scripts/wildfire.vim",
-	"dhruvasagar/vim-table-mode",
+	{ "dhruvasagar/vim-table-mode" },
 	{
 		"vimwiki/vimwiki",
 		priority = 1000,
@@ -266,18 +188,27 @@ require("lazy").setup({
 	--LSP--
 	-------
 	-------
-	"neovim/nvim-lspconfig",
-	"williamboman/mason.nvim",
-	"williamboman/mason-lspconfig.nvim",
+	{ "neovim/nvim-lspconfig" },
+	{ "williamboman/mason.nvim" },
+	{ "williamboman/mason-lspconfig.nvim" },
+	-- LSP Symbols, Tags
+	{ "stevearc/aerial.nvim" }, --outline
+	{ "j-hui/fidget.nvim", version = "legacy" },
 
 	-------
 	-------
 	--DAP--
 	-------
 	-------
-	"mfussenegger/nvim-dap",
-	"rcarriga/nvim-dap-ui",
-	"theHamsta/nvim-dap-virtual-text",
+	{ "mfussenegger/nvim-dap" },
+	{ "rcarriga/nvim-dap-ui" },
+	{ "theHamsta/nvim-dap-virtual-text" },
+	{
+		"mfussenegger/nvim-dap-python",
+		config = function()
+			require("dap-python").setup("~/myvenv/bin/python")
+		end,
+	},
 	--use({ "puremourning/vimspector" })
 
 	-------------
@@ -285,21 +216,21 @@ require("lazy").setup({
 	--Formatter--
 	-------------
 	-------------
-	"mhartington/formatter.nvim",
+	{ "mhartington/formatter.nvim" },
 
 	-------
 	-------
 	--CMP--
 	-------
 	-------
-	"hrsh7th/nvim-cmp",
-	"hrsh7th/cmp-nvim-lsp",
-	"hrsh7th/cmp-cmdline",
-	"hrsh7th/cmp-path",
-	"L3MON4D3/LuaSnip",
-	"saadparwaiz1/cmp_luasnip",
-	"rafamadriz/friendly-snippets",
-	"tamago324/cmp-zsh",
-	"Shougo/deol.nvim", --zsh搭配使用
-	"kdheepak/cmp-latex-symbols",
+	{ "hrsh7th/nvim-cmp" },
+	{ "hrsh7th/cmp-nvim-lsp" },
+	{ "hrsh7th/cmp-cmdline" },
+	{ "hrsh7th/cmp-path" },
+	{ "L3MON4D3/LuaSnip" },
+	{ "saadparwaiz1/cmp_luasnip" },
+	{ "rafamadriz/friendly-snippets" },
+	{ "tamago324/cmp-zsh" },
+	{ "Shougo/deol.nvim" }, --zsh搭配使用
+	{ "kdheepak/cmp-latex-symbols" },
 })
