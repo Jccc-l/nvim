@@ -113,12 +113,13 @@ require("lazy").setup({
 	-- read or write files with sudo command
 	{ "lambdalisue/suda.vim" },
 
-	{
-		"voldikss/vim-floaterm",
-		--		config = function()
-		--			require("pack.floaterm").setup()
-		--		end,
-	},
+	"akinsho/toggleterm.nvim",
+	-- {
+	-- 	"voldikss/vim-floaterm",
+	--		config = function()
+	--			require("pack.floaterm").setup()
+	--		end,
+	-- },
 
 	--use({ "ashisha/image.vim" })
 
@@ -192,7 +193,7 @@ require("lazy").setup({
 	{ "williamboman/mason.nvim" },
 	{ "williamboman/mason-lspconfig.nvim" },
 	-- LSP Symbols, Tags
-	{ "stevearc/aerial.nvim" }, --outline
+	{ "simrat39/symbols-outline.nvim" },
 	{ "j-hui/fidget.nvim", version = "legacy" },
 
 	-------

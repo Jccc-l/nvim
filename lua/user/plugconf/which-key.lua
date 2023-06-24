@@ -80,7 +80,7 @@ local opts = {
 }
 
 local mappings = {
-	["a"] = { "<cmd>AerialToggle<cr>", "Vista" },
+	["a"] = { "<cmd>SymbolsOutline<cr>", "Vista" },
 	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 	-- ["w"] = { "<cmd>w<CR>", "Save" },
 	["q"] = { "<cmd>q!<CR>", "Quit" },

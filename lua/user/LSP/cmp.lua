@@ -187,6 +187,3 @@ require('lspconfig')['texlab'].setup {
 require('lspconfig')['jdtls'].setup {
 	capabilities = capabilities
 }
-require('lspconfig')['marksman'].setup {
-	capabilities = capabilities
-}
