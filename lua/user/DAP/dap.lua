@@ -8,7 +8,7 @@ local function config_dapi_and_sign()
 
 	local dap_breakpoint = {
 		error = {
-			text = "🛑",
+			text = "",
 			texthl = "LspDiagnosticsSignError",
 			linehl = "",
 			numhl = "",
@@ -20,7 +20,7 @@ local function config_dapi_and_sign()
 			numhl = "",
 		},
 		stopped = {
-			text = "⭐️",
+			text = "",
 			texthl = "LspDiagnosticsSignInformation",
 			linehl = "DiagnosticUnderlineInfo",
 			numhl = "LspDiagnosticsSignInformation",
