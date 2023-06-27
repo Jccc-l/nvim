@@ -41,13 +41,13 @@ local kind_icons = {
 	Struct = "",
 	Event = "",
 	Operator = "",
-	TypeParameter = ""
+	TypeParameter = "",
 }
 
 cmp.setup({
 	mapping = {
 		-- ... Your other configuration ...
-		['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+		["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 		["<C-j>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
@@ -74,15 +74,15 @@ cmp.setup({
 
 		["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
 		["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
-		["<C-e>"] = cmp.mapping {
+		["<C-e>"] = cmp.mapping({
 			i = cmp.mapping.abort(),
 			c = cmp.mapping.close(),
-		},
+		}),
 	},
 	snippet = {
 		-- REQUIRED - you must specify a snippet engine
 		expand = function(args)
-			require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+			require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
 		end,
 	},
 	window = {
@@ -105,63 +105,73 @@ cmp.setup({
 	},
 	sources = cmp.config.sources({
 		{
-			name = 'nvim_lsp',
+			name = "nvim_lsp",
 			entry_filter = function(entry)
 				return require("cmp").lsp.CompletionItemKind.Snippet ~= entry:get_kind()
-			end
+			end,
 		},
-		{ name = 'path' },
-		{ name = 'buffer' },
+		{ name = "path" },
+		{ name = "buffer" },
 		-- { name = 'vsnip' }, -- For vsnip users.
-		{ name = 'luasnip' }, -- For luasnip users.
-		{ name = 'zsh' },
-		{ name = 'latex_symbols' },
+		{ name = "luasnip" }, -- For luasnip users.
+		{ name = "zsh" },
+		{ name = "latex_symbols" },
+		{
+			name = "spell",
+			option = {
+				keep_all_entries = false,
+				enable_in_context = function()
+					return true
+				end,
+			},
+		},
 		-- { name = 'ultisnips' }, -- For ultisnips users.
 		-- { name = 'snippy' }, -- For snippy users.
 	}),
 	formatting = {
 		format = function(entry, vim_item)
 			-- Kind icons
-			vim_item.kind = string.format('%s', kind_icons[vim_item.kind]) --vim_item.kind) -- This concatonates the icons with the name of the item kind
+			vim_item.kind = string.format("%s", kind_icons[vim_item.kind]) --vim_item.kind) -- This concatonates the icons with the name of the item kind
 			-- Source
 			vim_item.menu = ({
 				buffer = "[Buffer]",
-				nvim_lsp = "[LSP]",
 				luasnip = "[LuaSnip]",
-				nvim_lua = "[Lua]",
 				latex_symbols = "[LaTeX]",
+				nvim_lua = "[Lua]",
+				nvim_lsp = "[LSP]",
 				zsh = "[ZSH]",
+				spell = "[SPELL]",
 			})[entry.source.name]
 			return vim_item
-		end
+		end,
 	},
 })
 
 -- Set configuration for specific filetype.
-cmp.setup.filetype('gitcommit', {
+cmp.setup.filetype("gitcommit", {
 	sources = cmp.config.sources({
-		{ name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
+		{ name = "cmp_git" }, -- You can specify the `cmp_git` source if you were installed it.
 	}, {
-		{ name = 'buffer' },
-	})
+		{ name = "buffer" },
+	}),
 })
 
 -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline({ '/', '?' }, {
+cmp.setup.cmdline({ "/", "?" }, {
 	mapping = cmp.mapping.preset.cmdline(),
 	sources = {
-		{ name = 'buffer' }
-	}
+		{ name = "buffer" },
+	},
 })
 
 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline(':', {
+cmp.setup.cmdline(":", {
 	mapping = cmp.mapping.preset.cmdline(),
 	sources = cmp.config.sources({
-		{ name = 'path' }
+		{ name = "path" },
 	}, {
-		{ name = 'cmdline' }
-	})
+		{ name = "cmdline" },
+	}),
 })
 
 -- Set up lspconfig.
@@ -170,20 +180,20 @@ cmp.setup.cmdline(':', {
 --   capabilities = capabilities
 --}
 
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-require('lspconfig')['clangd'].setup {
-	capabilities = capabilities
-}
-require('lspconfig')['pyright'].setup {
-	capabilities = capabilities
-}
-require('lspconfig')['lua_ls'].setup {
-	capabilities = capabilities
-}
-require('lspconfig')['texlab'].setup {
-	capabilities = capabilities
-}
-require('lspconfig')['jdtls'].setup {
-	capabilities = capabilities
-}
+require("lspconfig")["clangd"].setup({
+	capabilities = capabilities,
+})
+require("lspconfig")["pyright"].setup({
+	capabilities = capabilities,
+})
+require("lspconfig")["lua_ls"].setup({
+	capabilities = capabilities,
+})
+require("lspconfig")["texlab"].setup({
+	capabilities = capabilities,
+})
+require("lspconfig")["jdtls"].setup({
+	capabilities = capabilities,
+})

@@ -53,6 +53,8 @@ M.load_default_options = function()
 		scrolloff = 8, -- minimal number of screen lines to keep above and below the cursor.
 		sidescrolloff = 8, -- minimal number of screen lines to keep left and right of the cursor.
 		showcmd = false,
+		spell = true,
+		spelllang = { "en_us" },
 		ruler = false,
 		laststatus = 3,
 	}
