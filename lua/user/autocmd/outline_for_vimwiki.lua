@@ -24,6 +24,5 @@ vim.api.nvim_create_autocmd("FileType", {
 		keymap("i", ",2", "## <CR><++><ESC>kA", opts)
 		keymap("i", ",3", "### <CR><++><ESC>kA", opts)
 		keymap("i", ",4", "#### <CR><++><ESC>kA", opts)
-		-- vim.o.filetype="markdown"
 	end,
 })
