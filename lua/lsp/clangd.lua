@@ -79,3 +79,5 @@ vim.lsp.config("clangd", {
     end, { desc = "Show symbol info" })
   end,
 })
+
+vim.lsp.enable("clangd")
