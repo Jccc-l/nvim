@@ -1,9 +1,9 @@
 -- $HOME/.config/nvim/lua/plugins/mason-lspconfig.lua
-require('mason-lspconfig').setup({
+require("mason-lspconfig").setup({
   automatic_enable = {
-    'lua_ls',
+    "lua_ls",
   },
-  ensure_installed={
+  ensure_installed = {
     "pyright",
     "lua_ls",
     "stylua",
@@ -11,5 +11,5 @@ require('mason-lspconfig').setup({
     "vimls",
     "bashls",
     "clangd",
-  }
+  },
 })
