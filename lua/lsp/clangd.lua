@@ -1,3 +1,4 @@
+-- $HOME/.config/nvim/lua/lsp/clangd.lua
 local function switch_source_header(bufnr, client)
   local method_name = "textDocument/switchSourceHeader"
   if not client or not client:supports_method(method_name) then
