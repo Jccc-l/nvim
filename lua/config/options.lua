@@ -89,7 +89,7 @@ vim.opt.incsearch = true                          -- [default: true  ] Show matc
 vim.opt.signcolumn = "yes:2"                      -- [default: "auto"] Always show signcolumn with 2-column width.
 
 vim.opt.colorcolumn = "100"                       -- [default: ""    ] Vertical line to mark line length limit.
-vim.opt.showmatch = true                          -- [default: false ] When a bracket is inserted, briefly jump to the matching one.
+vim.opt.showmatch = false                         -- [default: false ] When a bracket is inserted, briefly jump to the matching one.
 vim.opt.cmdheight = 1                             -- [default: 1     ] Number of screen lines to use for the command-line.
 vim.opt.completeopt = "menuone,noinsert,noselect" -- [default: "menu,popup"] A list of options for Insert mode completion.
 vim.opt.showmode = false                          -- [default: true  ] Display current mode on the last line.
