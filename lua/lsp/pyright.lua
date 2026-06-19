@@ -1,3 +1,4 @@
+-- $HOME/.config/nvim/lua/lsp/pyright.lua
 local function set_python_path(command)
   local path = command.args
   local clients = vim.lsp.get_clients({
