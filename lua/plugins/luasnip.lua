@@ -1,1 +1,0 @@
--- $HOME/.config/nvim/lua/plugins/luasnip.lua

@@ -9,10 +9,16 @@ vim.pack.add({
   { src = "https://github.com/hrsh7th/cmp-buffer" },
   { src = "https://github.com/hrsh7th/cmp-path" },
   { src = "https://github.com/hrsh7th/cmp-cmdline" },
-  { src = "https://github.com/hrsh7th/cmp-cmdline" },
   { src = "https://github.com/rafamadriz/friendly-snippets" },
 })
 
 require("plugins.mason")
 require("plugins.mason-lspconfig")
 require("plugins.nvim-cmp")
+require("plugins.cmp-nvim-lsp")
+require("plugins.LuaSnip")
+require("plugins.cmp_luasnip")
+require("plugins.cmp-buffer")
+require("plugins.cmp-path")
+require("plugins.cmp-cmdline")
+require("plugins.friendly-snippets")
