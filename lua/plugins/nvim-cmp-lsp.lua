@@ -1,1 +1,0 @@
--- $HOME/.config/nvim/lua/plugins/nvim-cmp-lsp.lua
