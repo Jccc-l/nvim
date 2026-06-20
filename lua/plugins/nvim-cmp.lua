@@ -2,6 +2,33 @@
 -- Set up nvim-cmp.
 local cmp = require("cmp")
 local luasnip = require("luasnip")
+local kind_icons = {
+  Text = "",
+  Method = "󰆧",
+  Function = "󰊕",
+  Constructor = "",
+  Field = "󰇽",
+  Variable = "󰂡",
+  Class = "󰠱",
+  Interface = "",
+  Module = "",
+  Property = "󰜢",
+  Unit = "",
+  Value = "󰎠",
+  Enum = "",
+  Keyword = "󰌋",
+  Snippet = "",
+  Color = "󰏘",
+  File = "󰈙",
+  Reference = "",
+  Folder = "󰉋",
+  EnumMember = "",
+  Constant = "󰏿",
+  Struct = "",
+  Event = "",
+  Operator = "󰆕",
+  TypeParameter = "󰅲",
+}
 
 cmp.setup({
   snippet = {
@@ -20,10 +47,18 @@ cmp.setup({
       -- require("cmp.config").set_onetime({ sources = {} })
     end,
   },
+
   window = {
     -- completion = cmp.config.window.bordered(),
     -- documentation = cmp.config.window.bordered(),
+    completion = cmp.config.window.bordered({
+      -- border = 'rounded', -- Options: 'single', 'double', 'rounded', 'solid', 'shadow'
+      -- border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
+      border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+      winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
+    }),
   },
+
   mapping = cmp.mapping.preset.insert({
     ["<C-b>"] = cmp.mapping.scroll_docs(-4),
     ["<C-f>"] = cmp.mapping.scroll_docs(4),
@@ -63,6 +98,7 @@ cmp.setup({
       end
     end, { "i", "s" }),
   }),
+
   sources = cmp.config.sources({
     { name = "nvim_lsp" },
     -- { name = 'vsnip' }, -- For vsnip users.
@@ -73,6 +109,31 @@ cmp.setup({
     { name = "buffer" },
     { name = "path" },
   }),
+
+  formatting = {
+    format = function(entry, vim_item)
+      local lspkind_ok, lspkind = pcall(require, "lspkind")
+      if not lspkind_ok then
+        -- From kind_icons array
+        vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind) -- This concatenates the icons with the name of the item kind
+        -- Source
+        vim_item.menu = ({
+          buffer = "[Buffer]",
+          nvim_lsp = "[LSP]",
+          luasnip = "[LuaSnip]",
+          nvim_lua = "[Lua]",
+          latex_symbols = "[LaTeX]",
+          path = "[Path]",
+        })[entry.source.name]
+        return vim_item
+      else
+        -- From lspkind
+        return lspkind.cmp_format()(entry, vim_item)
+      end
+    end,
+  },
+
+  experimental = { ghost_text = true },
 })
 
 -- To use git you need to install the plugin petertriho/cmp-git and uncomment lines below
