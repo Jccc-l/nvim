@@ -11,6 +11,7 @@ vim.pack.add({
   { src = "https://github.com/hrsh7th/cmp-cmdline", name = "cmp-cmdline" },
   { src = "https://github.com/rafamadriz/friendly-snippets", name = "friendly-snippets" },
   { src = "https://github.com/catppuccin/nvim", name = "catppuccin" },
+  { src = "https://github.com/nvim-lualine/lualine.nvim", name = "lualine" },
 })
 
 require("plugins.mason")
@@ -24,3 +25,4 @@ require("plugins.cmp-path")
 require("plugins.cmp-cmdline")
 require("plugins.friendly-snippets")
 require("plugins.catppuccin")
+require("plugins.lualine")
