@@ -36,7 +36,7 @@ cmp.setup({
     expand = function(args)
       -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
       require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
-      -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
+      -- require("snippy").expand_snippet(args.body) -- For `snippy` users.
       -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
       -- vim.snippet.expand(args.body) -- For native neovim snippets (Neovim v0.10+)
 
@@ -52,7 +52,7 @@ cmp.setup({
     -- completion = cmp.config.window.bordered(),
     -- documentation = cmp.config.window.bordered(),
     completion = cmp.config.window.bordered({
-      border = 'none', -- Options: 'single', 'double', 'rounded', 'solid', 'shadow'
+      border = "none", -- Options: "single", "double", "rounded", "solid", "shadow"
       -- border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
       --border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
       winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
@@ -101,10 +101,10 @@ cmp.setup({
 
   sources = cmp.config.sources({
     { name = "nvim_lsp" },
-    -- { name = 'vsnip' }, -- For vsnip users.
+    -- { name = "vsnip" }, -- For vsnip users.
     { name = "luasnip" }, -- For luasnip users.
-    -- { name = 'ultisnips' }, -- For ultisnips users.
-    -- { name = 'snippy' }, -- For snippy users.
+    -- { name = "ultisnips" }, -- For ultisnips users.
+    -- { name = "snippy" }, -- For snippy users.
   }, {
     { name = "buffer" },
     { name = "path" },
@@ -138,17 +138,17 @@ cmp.setup({
 
 -- To use git you need to install the plugin petertriho/cmp-git and uncomment lines below
 -- Set configuration for specific filetype.
---[[ cmp.setup.filetype('gitcommit', {
+--[[ cmp.setup.filetype("gitcommit", {
     sources = cmp.config.sources({
-      { name = 'git' },
+      { name = "git" },
     }, {
-      { name = 'buffer' },
+      { name = "buffer" },
     })
  })
  require("cmp_git").setup() ]]
 --
 
--- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
+-- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won"t work anymore).
 cmp.setup.cmdline({ "/", "?" }, {
   mapping = cmp.mapping.preset.cmdline(),
   sources = {
@@ -156,7 +156,7 @@ cmp.setup.cmdline({ "/", "?" }, {
   },
 })
 
--- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+-- Use cmdline & path source for ":" (if you enabled `native_menu`, this won"t work anymore).
 cmp.setup.cmdline(":", {
   mapping = cmp.mapping.preset.cmdline(),
   sources = cmp.config.sources({
