@@ -1,5 +1,4 @@
 -- $HOME/.config/nvim/lua/lsp/init.lua
-
 local function load_lsp(lsp_name)
   local ok, _ = pcall(require, lsp_name)
   if not ok then
