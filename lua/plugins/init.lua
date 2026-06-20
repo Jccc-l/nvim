@@ -12,17 +12,26 @@ vim.pack.add({
   { src = "https://github.com/rafamadriz/friendly-snippets", name = "friendly-snippets" },
   { src = "https://github.com/catppuccin/nvim", name = "catppuccin" },
   { src = "https://github.com/nvim-lualine/lualine.nvim", name = "lualine" },
+  { src = "https://github.com/obsidian-nvim/obsidian.nvim", name = "obsidian" },
 })
 
-require("plugins.mason")
-require("plugins.mason-lspconfig")
-require("plugins.nvim-cmp")
-require("plugins.cmp-nvim-lsp")
-require("plugins.LuaSnip")
-require("plugins.cmp_luasnip")
-require("plugins.cmp-buffer")
-require("plugins.cmp-path")
-require("plugins.cmp-cmdline")
-require("plugins.friendly-snippets")
-require("plugins.catppuccin")
-require("plugins.lualine")
+local function load_plugin(plugin_name)
+  local ok, _ = pcall(require, plugin_name)
+  if not ok then
+    vim.notify("Failed to load plugin: " .. plugin_name, vim.log.levels.WARN)
+  end
+end
+
+load_plugin("plugins.mason")
+load_plugin("plugins.mason-lspconfig")
+load_plugin("plugins.nvim-cmp")
+load_plugin("plugins.cmp-nvim-lsp")
+load_plugin("plugins.LuaSnip")
+load_plugin("plugins.cmp_luasnip")
+load_plugin("plugins.cmp-buffer")
+load_plugin("plugins.cmp-path")
+load_plugin("plugins.cmp-cmdline")
+load_plugin("plugins.friendly-snippets")
+load_plugin("plugins.catppuccin")
+load_plugin("plugins.lualine")
+load_plugin("plugins.obsidian")
