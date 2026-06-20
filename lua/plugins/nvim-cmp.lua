@@ -52,9 +52,9 @@ cmp.setup({
     -- completion = cmp.config.window.bordered(),
     -- documentation = cmp.config.window.bordered(),
     completion = cmp.config.window.bordered({
-      -- border = 'rounded', -- Options: 'single', 'double', 'rounded', 'solid', 'shadow'
+      border = 'none', -- Options: 'single', 'double', 'rounded', 'solid', 'shadow'
       -- border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
-      border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+      --border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
       winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
     }),
   },

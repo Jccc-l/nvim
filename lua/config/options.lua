@@ -187,3 +187,5 @@ vim.opt.virtualedit = "block"                                                   
 
 vim.opt.encoding = "utf-8"                                                                         -- [default: ""    ] Set character encoding to UTF-8.
 vim.opt.fileencoding = "utf-8"                                                                     -- [default: ""    ] Set file encoding to UTF-8.
+
+vim.cmd.colorscheme("catppuccin-macchiato")

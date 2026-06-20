@@ -1,4 +1,4 @@
 -- $HOME/.config/nvim/init.lua
-require("config")
-require("lsp")
 require("plugins")
+require("lsp")
+require("config")
