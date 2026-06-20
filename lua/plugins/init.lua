@@ -13,6 +13,7 @@ vim.pack.add({
   { src = "https://github.com/catppuccin/nvim", name = "catppuccin" },
   { src = "https://github.com/nvim-lualine/lualine.nvim", name = "lualine" },
   { src = "https://github.com/obsidian-nvim/obsidian.nvim", name = "obsidian" },
+  { src = "https://github.com/nvim-lua/plenary.nvim", name = "plenary" },
 })
 
 local function load_plugin(plugin_name)
@@ -35,3 +36,4 @@ load_plugin("plugins.friendly-snippets")
 load_plugin("plugins.catppuccin")
 load_plugin("plugins.lualine")
 load_plugin("plugins.obsidian")
+load_plugin("plugins.plenary")
