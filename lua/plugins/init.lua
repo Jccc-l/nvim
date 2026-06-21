@@ -14,6 +14,7 @@ vim.pack.add({
   { src = "https://github.com/nvim-lualine/lualine.nvim", name = "lualine" },
   { src = "https://github.com/obsidian-nvim/obsidian.nvim", name = "obsidian" },
   { src = "https://github.com/nvim-lua/plenary.nvim", name = "plenary" },
+  { src = "https://github.com/nvim-telescope/telescope.nvim", name = "telescope" },
 })
 
 local function load_plugin(plugin_name)
