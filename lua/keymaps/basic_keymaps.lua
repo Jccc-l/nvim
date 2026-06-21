@@ -1,5 +1,5 @@
 -- $HOME/.config/nvim/lua/keymaps/basic_keymaps.lua
-vim.g.mapleader=" "
+vim.g.mapleader = " "
 
 local opts = { silent = true }
 local expr_opts = { expr = true, silent = true }

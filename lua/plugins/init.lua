@@ -15,6 +15,7 @@ vim.pack.add({
   { src = "https://github.com/obsidian-nvim/obsidian.nvim", name = "obsidian" },
   { src = "https://github.com/nvim-lua/plenary.nvim", name = "plenary" },
   { src = "https://github.com/nvim-telescope/telescope.nvim", name = "telescope" },
+  { src = "https://github.com/stevearc/aerial.nvim", name = "aerial" },
 })
 
 local function load_plugin(plugin_name)
@@ -23,7 +24,6 @@ local function load_plugin(plugin_name)
     vim.notify("Failed to load plugin: " .. plugin_name, vim.log.levels.WARN)
   end
 end
-
 
 load_plugin("plugins.mason")
 load_plugin("plugins.mason-lspconfig")
@@ -40,3 +40,4 @@ load_plugin("plugins.lualine")
 load_plugin("plugins.obsidian")
 load_plugin("plugins.plenary")
 load_plugin("plugins.telescope")
+load_plugin("plugins.aerial")
