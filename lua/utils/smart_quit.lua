@@ -1,5 +1,5 @@
 -- $HOME/.config/nvim/lua/utils/smart_quit.lua
-local M={}
+local M = {}
 -- Configuration: Define the filetypes that are allowed to be ignored
 -- If all other windows have these filetypes, we consider it safe to quit.
 M.ignore_filetypes = {
@@ -15,7 +15,9 @@ M.ignore_filetypes = {
 function M.is_ignored(bufnr)
   local ft = vim.bo[bufnr].filetype
   for _, allowed_ft in ipairs(M.ignore_filetypes) do
-    if ft == allowed_ft then return true end
+    if ft == allowed_ft then
+      return true
+    end
   end
   return false
 end

@@ -5,7 +5,7 @@ local opts = { silent = true }
 local expr_opts = { expr = true, silent = true }
 
 -- =============================================================================
--- Navigation: Smart Up/Down 
+-- Navigation: Smart Up/Down
 -- Makes j/k behave naturally with wrapped lines (visual line vs. logical line)
 -- =============================================================================
 

@@ -18,6 +18,7 @@ vim.pack.add({
   { src = "https://github.com/stevearc/aerial.nvim", name = "aerial" },
   { src = "https://github.com/onsails/lspkind.nvim", name = "lspkind" },
   { src = "https://github.com/rcarriga/nvim-notify", name = "nvim-notify" },
+  { src = "https://github.com/stevearc/conform.nvim", name = "conform" },
 })
 
 local function load_plugin(plugin_name)
@@ -45,3 +46,4 @@ load_plugin("plugins.telescope")
 load_plugin("plugins.aerial")
 load_plugin("plugins.lspkind")
 load_plugin("plugins.nvim-notify")
+load_plugin("plugins.conform")
