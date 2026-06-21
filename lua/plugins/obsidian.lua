@@ -47,7 +47,9 @@ require("obsidian").setup({
       slug = slug:gsub("^-+", ""):gsub("-+$", "")
       slug = slug:gsub("^%s+", ""):gsub("%s+$", "")
       slug = slug:gsub("-+", "-")
-      if slug == "" then slug = "Untitled" end
+      if slug == "" then
+        slug = "Untitled"
+      end
     end
 
     local random_suffix = ""
