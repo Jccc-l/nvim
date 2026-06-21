@@ -24,6 +24,7 @@ local function load_plugin(plugin_name)
   end
 end
 
+
 load_plugin("plugins.mason")
 load_plugin("plugins.mason-lspconfig")
 load_plugin("plugins.nvim-cmp")
@@ -38,3 +39,4 @@ load_plugin("plugins.catppuccin")
 load_plugin("plugins.lualine")
 load_plugin("plugins.obsidian")
 load_plugin("plugins.plenary")
+load_plugin("plugins.telescope")
