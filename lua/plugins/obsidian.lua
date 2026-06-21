@@ -74,15 +74,7 @@ require("obsidian").setup({
   ---
   ---@field template string|?
   note = {
-    template = (function()
-      local root = vim.iter(vim.api.nvim_list_runtime_paths()):find(function(path)
-        return vim.endswith(path, "obsidian.nvim")
-      end)
-      if not root then
-        return nil
-      end
-      return vim.fs.joinpath(root, "data/default_template.md")
-    end)(),
+    template = "Default.md",
   },
 
   ---@class obsidian.config.FileOpts
@@ -110,10 +102,19 @@ require("obsidian").setup({
     enabled = true,
     func = function(note)
       local out = require("obsidian.builtin").frontmatter(note)
-      out["created"] = os.date("%Y-%m-%d %H:%M")
+      local timestamp = note.id:match("^(%d%d%d%d%d%d%d%d%d%d%d%d)")
+      if timestamp then
+        out["created"] = string.format(
+          "%s-%s-%s %s:%s",
+          timestamp:sub(1, 4),
+          timestamp:sub(5, 6),
+          timestamp:sub(7, 8),
+          timestamp:sub(9, 10),
+          timestamp:sub(11, 12)
+        )
+      end
       return out
     end,
-    -- 排序也同步修改
     sort = { "id", "created", "aliases", "tags" },
   },
 
@@ -130,34 +131,25 @@ require("obsidian").setup({
   ---@field customizations table<string, obsidian.config.CustomTemplateOpts>|?
   templates = {
     enabled = true,
-    folder = nil,
+    folder = "Templates",
     date_format = "YYYY-MM-DD",
     time_format = "HH:mm",
     substitutions = {
-      date = function(_, suffix)
-        local format = suffix or Obsidian.opts.templates.date_format
-        return require("obsidian.util").format_date(os.time(), format)
-      end,
-      time = function(_, suffix)
-        local format = suffix or Obsidian.opts.templates.time_format
-        return require("obsidian.util").format_date(os.time(), format)
-      end,
       title = function(ctx)
         return ctx.partial_note and ctx.partial_note:display_name()
       end,
       id = function(ctx)
         return ctx.partial_note and ctx.partial_note.id
       end,
-      path = function(ctx)
-        return ctx.partial_note and tostring(ctx.partial_note.path)
+      date = function(_, suffix)
+        local format = suffix or "YYYY-MM-DD"
+        return require("obsidian.util").format_date(os.time(), format)
+      end,
+      time = function(_, suffix)
+        local format = suffix or "HH:mm"
+        return require("obsidian.util").format_date(os.time(), format)
       end,
     },
-
-    ---@class obsidian.config.CustomTemplateOpts
-    ---
-    ---@field notes_subdir? string
-    ---@field note_id_func? (fun(title: string|?, path: obsidian.Path|?): string)
-    customizations = {},
   },
 
   ---@class obsidian.config.BacklinkOpts
