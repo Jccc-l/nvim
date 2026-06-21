@@ -1,0 +1,1 @@
+-- $HOME/.config/nvim/lua/plugins/lspkind.lua

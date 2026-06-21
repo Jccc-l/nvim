@@ -16,6 +16,7 @@ vim.pack.add({
   { src = "https://github.com/nvim-lua/plenary.nvim", name = "plenary" },
   { src = "https://github.com/nvim-telescope/telescope.nvim", name = "telescope" },
   { src = "https://github.com/stevearc/aerial.nvim", name = "aerial" },
+  { src = "https://github.com/onsails/lspkind.nvim", name = "lspkind" },
 })
 
 local function load_plugin(plugin_name)
@@ -41,3 +42,4 @@ load_plugin("plugins.obsidian")
 load_plugin("plugins.plenary")
 load_plugin("plugins.telescope")
 load_plugin("plugins.aerial")
+load_plugin("plugins.lspkind")
