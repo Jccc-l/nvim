@@ -12,8 +12,8 @@ require("obsidian").setup({
   --   enabled = true,
   -- },
 
-  notes_subdir = nil,
-  new_notes_location = "current_dir",
+  notes_subdir = "Notes",
+  new_notes_location = "notes_subdir",
 
   ---@alias obsidian.link.LinkStyle "wiki" | "markdown" | fun(opts: obsidian.link.LinkCreationOpts): string
   ---@alias obsidian.link.LinkFormat "shortest" | "relative" | "absolute"
@@ -34,15 +34,36 @@ require("obsidian").setup({
       path = "/mnt/Windows/Users/Jccc/Documents/Obsidian_Vaults/Computer_Science",
     },
   },
+
   log_level = vim.log.levels.INFO,
+
   -- Default random zettel IDs. To use readable UTF-8 slug IDs, set:
   -- note_id_func = require("obsidian.builtin").title_id
-  note_id_func = require("obsidian.builtin").zettel_id,
+  note_id_func = function(title)
+    local timestamp = os.date("%Y%m%d%H%M")
+    local slug = "Untitled"
+    if title ~= nil then
+      slug = title:gsub('[<>:"/\\|?*%c]+', "-")
+      slug = slug:gsub("^-+", ""):gsub("-+$", "")
+      slug = slug:gsub("^%s+", ""):gsub("%s+$", "")
+      slug = slug:gsub("-+", "-")
+      if slug == "" then slug = "Untitled" end
+    end
+
+    local random_suffix = ""
+    for i = 1, 4 do
+      random_suffix = random_suffix .. string.char(math.random(65, 90))
+    end
+
+    return string.format("%s-%s-%s", timestamp, slug, random_suffix)
+  end,
+
   note_path_func = function(spec)
     -- This is equivalent to the default behavior.
     local path = spec.dir / tostring(spec.id)
     return path:with_suffix(".md", true)
   end,
+
   open_notes_in = "current",
 
   ---@class obsidian.config.NoteOpts
@@ -85,8 +106,13 @@ require("obsidian").setup({
   ---@field sort? string[] | (fun(a: any, b: any): boolean) | vim.NIL | boolean
   frontmatter = {
     enabled = true,
-    func = require("obsidian.builtin").frontmatter,
-    sort = { "id", "aliases", "tags" },
+    func = function(note)
+      local out = require("obsidian.builtin").frontmatter(note)
+      out["created"] = os.date("%Y-%m-%d %H:%M")
+      return out
+    end,
+    -- 排序也同步修改
+    sort = { "id", "created", "aliases", "tags" },
   },
 
   ---@class obsidian.config.TemplateOpts
@@ -199,7 +225,7 @@ require("obsidian").setup({
   ---@field workdays_only? boolean
   daily_notes = {
     enabled = true,
-    folder = nil,
+    folder = "Daily",
     date_format = "YYYY-MM-DD",
     alias_format = nil,
     default_tags = { "daily-notes" },
@@ -234,7 +260,7 @@ require("obsidian").setup({
   ---@field hl_groups table<string, table>|?
   ui = {
     enable = true,
-    ignore_conceal_warn = false,
+    ignore_conceal_warn = true,
     update_debounce = 200,
     max_file_length = 5000,
     -- checkboxes = {
