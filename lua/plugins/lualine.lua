@@ -35,8 +35,22 @@ require("lualine").setup {
   sections = {
     lualine_a = { "mode" },
     lualine_b = { "branch", "diff", "diagnostics" },
+
     lualine_c = {
-      "filename",
+      {
+        "filename",
+        file_status = true,
+        newfile_status = true,
+        path = 1,
+        shorting_target = 40,
+        symbols = {
+          modified = "[+]",
+          readonly = "[-]",
+          unnamed = "[No Name]",
+          newfile = "[New]",
+        },
+      },
+
       {
         "lsp_status",
         icon = "", -- f013
@@ -54,6 +68,7 @@ require("lualine").setup {
         show_name = true,
       },
     },
+
     lualine_x = { "encoding", "fileformat", "filetype" },
     lualine_y = { "progress" },
     lualine_z = { "location", { "datetime", style = "%Y/%m/%d %H:%M:%S" } },
