@@ -22,7 +22,7 @@ vim.diagnostic.config({
     priority = 10,
   },
   underline = true,
-  update_in_insert = false,
+  update_in_insert = true,
   virtual_lines = false,
   virtual_text = {
     spacing = 4,
