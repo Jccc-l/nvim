@@ -20,6 +20,7 @@ vim.pack.add({
   { src = "https://github.com/rcarriga/nvim-notify", name = "nvim-notify" },
   { src = "https://github.com/stevearc/conform.nvim", name = "conform" },
   { src = "https://github.com/folke/which-key.nvim", name = "which-key" },
+  { src = "https://github.com/nvim-tree/nvim-web-devicons", name = "nvim-web-devicons" },
 })
 
 local function load_plugin(plugin_name)
@@ -49,3 +50,4 @@ load_plugin("plugins.lspkind")
 load_plugin("plugins.nvim-notify")
 load_plugin("plugins.conform")
 load_plugin("plugins.which-key")
+load_plugin("plugins.nvim-web-devicons")
