@@ -18,6 +18,7 @@ require("conform").setup({
     c = { "clangd" },
     cpp = { "clangd" },
     markdown = { "prettier" },
+    java = { "google-java-format" },
     -- Use the "*" filetype to run formatters on all filetypes.
     ["*"] = { "codespell" },
     -- Use the "_" filetype to run formatters on filetypes that don't
