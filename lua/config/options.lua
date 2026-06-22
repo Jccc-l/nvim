@@ -47,10 +47,10 @@ local indent_policies = {
   -- Tabs: Traditional systems languages (C, Makefiles, Headers)
   hard_tabs = {
     ft = { "c", "make", "h" },
-    tabstop = 8,
-    shiftwidth = 8,
-    softtabstop = 8,
-    expandtab = false,
+    tabstop = 2,
+    shiftwidth = 2,
+    softtabstop = 2,
+    expandtab = true,
   },
 }
 
