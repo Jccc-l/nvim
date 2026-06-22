@@ -57,13 +57,18 @@ end, { desc = "Telescope keymaps" })
 
 -- Colorscheme
 vim.keymap.set("n", "<leader>fc", function()
-  require("telescope.builtin").colorscheme(ivy_opts({
-    previewer = false,
-    enable_preview = true,
-    layout_config = { height = 0.2 },
-  }))
+  require("telescope.builtin").colorscheme(
+    ivy_opts({ previewer = false, enable_preview = true, layout_config = { height = 0.2 } })
+  )
 end, { desc = "Telescope colorscheme" })
 
 -- Search LSP symbols
-vim.keymap.set("n", "<leader>fs", require("telescope.builtin").lsp_document_symbols)
-vim.keymap.set("n", "<leader>fS", require("telescope.builtin").lsp_dynamic_workspace_symbols)
+vim.keymap.set(
+  "n",
+  "<leader>fs",
+  require("telescope.builtin").lsp_document_symbols,
+  { desc = "Telescope file lsp-symbols" }
+)
+vim.keymap.set("n", "<leader>fS", function()
+  require("telescope.builtin").lsp_dynamic_workspace_symbols()
+end, { desc = "Telescope workspace lsp-symbols" })

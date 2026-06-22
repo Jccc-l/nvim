@@ -170,3 +170,7 @@ require("which-key").setup({
   },
   debug = false, -- enable wk.log in the current directory
 })
+
+require("which-key").add({
+  { "<leader>f", group = "Telescope" },
+})
