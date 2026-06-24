@@ -18,3 +18,5 @@ vim.lsp.config("vimls", {
     suggest = { fromVimruntime = true, fromRuntimepath = true },
   },
 })
+
+vim.lsp.enable("vimls")

@@ -4,3 +4,5 @@ vim.lsp.config("stylua", {
   filetypes = { "lua" },
   root_markers = { ".stylua.toml", "stylua.toml", ".editorconfig" },
 })
+
+vim.lsp.enable("stylua")
