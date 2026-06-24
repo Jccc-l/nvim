@@ -46,6 +46,7 @@ require("obsidian").setup({
       slug = title:gsub('[<>:"/\\|?*%c]+', "-")
       slug = slug:gsub("^-+", ""):gsub("-+$", "")
       slug = slug:gsub("^%s+", ""):gsub("%s+$", "")
+      slug = slug:gsub("%s+", "-")
       slug = slug:gsub("-+", "-")
       if slug == "" then
         slug = "Untitled"
