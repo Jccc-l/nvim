@@ -9,6 +9,12 @@ M.ignore_filetypes = {
   "help",
   "qf",
   "aerial",
+  "dapui_scopes",
+  "dapui_breakpoints",
+  "dapui_stacks",
+  "dapui_watches",
+  "dap-repl",
+  "dapui_console",
 }
 
 -- Helper function to check if a filetype is in the ignore list

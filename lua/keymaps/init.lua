@@ -2,3 +2,4 @@
 require("keymaps.enhanced_keymaps")
 require("keymaps.telescope")
 require("keymaps.aerial")
+require("keymaps.dap")

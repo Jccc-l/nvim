@@ -21,6 +21,10 @@ vim.pack.add({
   { src = "https://github.com/stevearc/conform.nvim", name = "conform" },
   { src = "https://github.com/folke/which-key.nvim", name = "which-key" },
   { src = "https://github.com/nvim-tree/nvim-web-devicons", name = "nvim-web-devicons" },
+  { src = "https://github.com/nvim-neotest/nvim-nio", name = "nvim-nio" },
+  { src = "https://github.com/mfussenegger/nvim-dap", name = "nvim-dap" },
+  { src = "https://github.com/rcarriga/nvim-dap-ui", name = "nvim-dap-ui" },
+  { src = "https://github.com/theHamsta/nvim-dap-virtual-text", name = "nvim-dap-virtual-text" },
 })
 
 local function load_plugin(plugin_name)
@@ -51,3 +55,7 @@ load_plugin("plugins.nvim-notify")
 load_plugin("plugins.conform")
 load_plugin("plugins.which-key")
 load_plugin("plugins.nvim-web-devicons")
+load_plugin("plugins.nvim-nio")
+load_plugin("plugins.nvim-dap")
+load_plugin("plugins.nvim-dap-ui")
+load_plugin("plugins.nvim-dap-virtual-text")

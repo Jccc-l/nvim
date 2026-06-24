@@ -38,7 +38,7 @@ local indent_policies = {
   },
   -- 4 Spaces: Modern compiled/interpreted languages
   four_spaces = {
-    ft = { "python", "java", "cpp", "csharp" },
+    ft = { "python", "cpp", "csharp" },
     tabstop = 4,
     shiftwidth = 4,
     softtabstop = 4,
@@ -46,7 +46,7 @@ local indent_policies = {
   },
   -- Tabs: Traditional systems languages (C, Makefiles, Headers)
   hard_tabs = {
-    ft = { "c", "make", "h" },
+    ft = { "c", "make", "h", "java" },
     tabstop = 2,
     shiftwidth = 2,
     softtabstop = 2,

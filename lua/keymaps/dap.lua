@@ -1,0 +1,18 @@
+-- $HOME/.config/nvim/lua/keymaps/dap.lua
+vim.keymap.set("n", "<leader>du", require("dapui").toggle, { desc = "Toggle DAP UI", noremap = true, silent = true })
+vim.keymap.set("n", "<leader>dc", function()
+  require("dap").continue()
+end, { desc = "DAP Continue", noremap = true, silent = true })
+vim.keymap.set("n", "<leader>dsi", function()
+  require("dap").step_into()
+end, { desc = "DAP Step Into", noremap = true, silent = true })
+vim.keymap.set("n", "<leader>dso", function()
+  require("dap").step_over()
+end, { desc = "DAP Step Over", noremap = true, silent = true })
+vim.keymap.set("n", "<leader>dr", function()
+  require("dap").repl.open()
+end, { desc = "DAP REPL", noremap = true, silent = true })
+
+vim.keymap.set("n", "<leader>db", function()
+  require "dap".toggle_breakpoint()
+end, { desc = "DAP Toggle Breakpoint", noremap = true, silent = true })
