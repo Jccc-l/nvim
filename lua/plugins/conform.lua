@@ -15,8 +15,8 @@ require("conform").setup({
         return { "isort", "black" }
       end
     end,
-    c = { "clangd" },
-    cpp = { "clangd" },
+    c = { "clang-format" },
+    cpp = { "clang-format" },
     markdown = { "prettier" },
     java = { "google-java-format" },
     -- Use the "*" filetype to run formatters on all filetypes.
