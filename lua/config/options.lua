@@ -9,6 +9,8 @@ vim.opt.wrap = false -- [ default: true ] wrap lines
 vim.opt.scrolloff = 5 -- [ default: 0 ] keep 10 lines above/below cursor
 vim.opt.sidescrolloff = 10 -- [ default: 0 ] keep 10 columns to left/right of cursor
 
+vim.opt.mousescroll = "ver:1,hor:6"
+
 vim.opt.smartindent = false -- [ default: false ] Do smart autoindenting when starting a new line.
 vim.opt.autoindent = true -- [ default: true ] Copy indent from current line when starting a new line.
 
