@@ -12,9 +12,9 @@ vim.pack.add({
   { src = "https://github.com/rafamadriz/friendly-snippets", name = "friendly-snippets" },
   { src = "https://github.com/catppuccin/nvim", name = "catppuccin" },
   { src = "https://github.com/nvim-lualine/lualine.nvim", name = "lualine" },
+  { src = "https://github.com/nvim-telescope/telescope.nvim", name = "telescope" },
   { src = "https://github.com/obsidian-nvim/obsidian.nvim", name = "obsidian" },
   { src = "https://github.com/nvim-lua/plenary.nvim", name = "plenary" },
-  { src = "https://github.com/nvim-telescope/telescope.nvim", name = "telescope" },
   { src = "https://github.com/stevearc/aerial.nvim", name = "aerial" },
   { src = "https://github.com/onsails/lspkind.nvim", name = "lspkind" },
   { src = "https://github.com/rcarriga/nvim-notify", name = "nvim-notify" },
@@ -46,9 +46,9 @@ load_plugin("plugins.cmp-cmdline")
 load_plugin("plugins.friendly-snippets")
 load_plugin("plugins.catppuccin")
 load_plugin("plugins.lualine")
+load_plugin("plugins.telescope")
 load_plugin("plugins.obsidian")
 load_plugin("plugins.plenary")
-load_plugin("plugins.telescope")
 load_plugin("plugins.aerial")
 load_plugin("plugins.lspkind")
 load_plugin("plugins.nvim-notify")
