@@ -72,3 +72,8 @@ vim.keymap.set(
 vim.keymap.set("n", "<leader>fS", function()
   require("telescope.builtin").lsp_dynamic_workspace_symbols()
 end, { desc = "Telescope workspace lsp-symbols" })
+
+-- Notify
+vim.keymap.set("n", "<leader>fn", function()
+  require("telescope").extensions.notify.notify()
+end, { desc = "Telescope notify" })
