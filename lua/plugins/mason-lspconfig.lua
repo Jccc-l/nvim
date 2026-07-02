@@ -11,5 +11,6 @@ require("mason-lspconfig").setup({
     "vimls",
     "bashls",
     "clangd",
+    "texlab",
   },
 })

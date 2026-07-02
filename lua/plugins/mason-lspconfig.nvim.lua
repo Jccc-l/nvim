@@ -1,1 +1,0 @@
--- $HOME/.config/nvim/lua/plugins/mason-lspconfig.nvim.lua
